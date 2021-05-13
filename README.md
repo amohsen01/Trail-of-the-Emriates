@@ -1,4 +1,16 @@
 # Trail-of-the-Emirates
+
+To work on code:
+```
+
+git clone https://github.com/amohsen01/Trail-of-the-Emriates.git TOTE
+
+/*To update:
+Got to file and type:*/
+git pull
+
+```
+
 Overview of the game:
 	The idea of the game is inspired by the game “The Oregon Trail'' where one traveler would start at Ajman and would have to travel to Abu Dhabi with a limited time frame. Finishing a business trip in Ajman, the player needs to visit the landmarks in each Emirate within a specified amount of time to catch their flight. The player may choose to travel by taxi or walking in which each option would give different outputs for the game since each transportation varies in time consumption. The game will have collectibles that would be available at each emirate that will add to the player’s score. The game will use sensors connected to the player’s phone in order to control certain aspects of the game.
 
