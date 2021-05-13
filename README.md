@@ -1,14 +1,26 @@
 # Trail-of-the-Emirates
 
+
+OPEN GIT BASH
 To work on code:
 ```
 
 git clone https://github.com/amohsen01/Trail-of-the-Emriates.git TOTE
+```
 
-/*To update:
-Got to file and type:*/
+To update local file:
+Go to file and type:
+
+```
 git pull
 
+```
+
+After finishing:
+```
+git add .
+git commit -m "name, what is added " //ex. Ali Landmarka Added
+git push
 ```
 
 Overview of the game:
