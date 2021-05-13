@@ -16,7 +16,7 @@ public ConcreteObserver(ConcreteSubject[] subjects)
 	}
 }
 
-	//Test
+	
 	public void update(Message M) {
 		// TODO Auto-generated method stub
 		
