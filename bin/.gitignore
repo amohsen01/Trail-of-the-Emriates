@@ -1,7 +1,10 @@
+/ConcreteObserver.class
+/ConcreteSubject.class
 /Landmark.class
-/Subject.class
 /Message.class
 /Observer.class
-/ConcreteSubject.class
-/ConcreteObject.class
-/ConcreteObserver.class
+/Subject.class
+/Driver.class
+/UserInterface.class
+/UserInterface$1.class
+/Clock.class
