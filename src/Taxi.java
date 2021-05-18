@@ -7,6 +7,7 @@ public class Taxi extends Collectible {
 	"To Call The Taxi To Pick You Up Wave With Your Phone And Say The Word Taxi ! ");
 	
 	}
+	
 @Override
 public void descrp()
 {
