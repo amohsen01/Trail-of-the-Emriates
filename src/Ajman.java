@@ -1,4 +1,4 @@
-
+ 
 public class Ajman extends Landmark{
 
 	Ajman(String name, String location, Collectible collectible, String Description) {

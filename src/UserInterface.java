@@ -60,6 +60,7 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 				System.out.println("\nGoodbye!");
 				System.exit(1); break;
 			}
+			
 			}
 			System.out.println("\nWrong input! Try again..");
 		}
