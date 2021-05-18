@@ -5,7 +5,6 @@ public class Picture extends Collectible {
 		super("Picture at Burj Khalifa ", "The Photographer Took A Picture Of "
 		+ "You At Burj Khalifa It Would Make An Amazing "
 		+ "Memory For You To Keep ", "You Have Successfully Added The Photo At Burj Khalifa To Your Back Pack");
-		
 	}
 
 	@Override
@@ -13,6 +12,7 @@ public class Picture extends Collectible {
 	{
 	System.out.println(descrp);	
 	}
+	
 	@Override
 	public void pickUp() {
 		
