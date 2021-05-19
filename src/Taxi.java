@@ -1,22 +1,43 @@
+import java.util.Scanner;
 
-public class Taxi extends Collectible {
+public class Taxi extends ConcreteObserver implements Runnable
+{
 	
-	public Taxi() {
-	super("Taxi", " The Taxi Will Take You To Any Of The Following Locatinos In Order : Al Zorah Beach , Souq Al Qadeem ,"
-	+ " Burj Khalifa , Abu Dhabi Airport. ",
-	"To Call The Taxi To Pick You Up Wave With Your Phone And Say The Word Taxi ! ");
-	
+Subject s;
+
+	Taxi(Subject s){
+		super(s);
+		Thread start=new Thread(this);
+		start.start();
+		
 	}
 	
-@Override
-public void descrp()
-{
-System.out.println(descrp);	
-}
-@Override
-public void pickUp() {
 	
-System.out.println(pick);
+	
+
+@Override
+public void run() {
+	
 }
 
+public void update(Message m) {
+	//here we can implement the message system;
+	
+	
+	if (m.topic=="done"){
+		switch(m.payload) {
+		case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem "); 
+		case "Sharjah": System.out.println("Hope you enjoyed the Souq Al Qadeem our next destination is the Dubai Mall");
+		case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport  "); 
+		case "Abu Dhabi":System.out.println("You have reached your final destination");
+		
+		}}
+	if(m.topic=="phone")
+	{
+		if(m.payload == "wave")
+		{
+			System.out.println("You are now in the Taxi ");
+	}
 }
+	
+}}

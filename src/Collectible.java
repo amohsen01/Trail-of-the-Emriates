@@ -1,4 +1,4 @@
-public class Collectible {
+public abstract class Collectible {
 
 String name;
 String descrp;

@@ -1,5 +1,5 @@
 
-public abstract class Landmark implements Collectible {
+public abstract class Landmark extends Collectible {
 
 	String name;
 	String location; // Dubai, ajman ...
