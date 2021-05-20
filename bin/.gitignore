@@ -10,6 +10,7 @@
 /DubaiMall.class
 /FlightAttendant.class
 /HotelLobbyist.class
+/Landmark.class
 /Message.class
 /Observer.class
 /Oud.class
@@ -20,3 +21,5 @@
 /Swiper.class
 /Taxi.class
 /UserInterface.class
+/AbuDhabiAirport.class
+/ZorahBeach.class

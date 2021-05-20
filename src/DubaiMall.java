@@ -106,8 +106,12 @@ private static Collectible l;
 	@Override
 	public void leaveLandmark() {
 		// TODO Auto-generated method stub
-		
+		Message m=new Message(this, "done","Dubai");
+		publishMessage(m);
 	}
+
+
+
 
 
 }

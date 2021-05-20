@@ -26,10 +26,10 @@ public void update(Message m) {
 	
 	if (m.topic=="done"){
 		switch(m.payload) {
-		case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem "); 
-		case "Sharjah": System.out.println("Hope you enjoyed the Souq Al Qadeem our next destination is the Dubai Mall");
-		case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport  "); 
-		case "Abu Dhabi":System.out.println("You have reached your final destination");
+		case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem "); break;
+		case "Sharjah": System.out.println("Hope you enjoyed the Souq Al Qadeem our next destination is the Dubai Mall");break;
+		case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport  "); break;
+		case "Abu Dhabi":System.out.println("You have reached your final destination");break;
 		
 		}}
 	if(m.topic=="phone")

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class FlightAttendant extends Characters {
 
-	public FlightAttendant(String name, String conversation) {
+	public FlightAttendant() {
 		
 		super("Emma" , "Hello, I'm Emma Your Flight Attendant. Welcome To"
 				+ " The Check In Area, Please Hand Me Your Passport So I"
