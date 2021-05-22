@@ -17,7 +17,7 @@ Subject s;
 
 @Override
 public void run() {
-	
+	while(true);
 }
 
 public void update(Message m) {
