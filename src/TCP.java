@@ -94,7 +94,15 @@ public class TCP extends ConcreteSubject implements Runnable
             		Message n = new Message(this, "phone", "wave");
         			publishMessage(n); 
             	}
-            
+            	
+            	String audio = (String) jsonObject.get("avAudioRecorderPeakPower");
+            	double sound = Double.parseDouble(audio);
+            	
+            	if(sound > -5)
+            	{
+            		Message n = new Message(this, "sound", "detected");
+        			publishMessage(n); 
+            	}
             
             }
             
