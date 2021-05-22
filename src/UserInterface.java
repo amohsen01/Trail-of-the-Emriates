@@ -22,6 +22,7 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 	@Override
 	public void run() {
 		Scanner playerInput = new Scanner(System.in);  
+		TCP client = new TCP("192.168.0.125", 55953);
 
 		System.out.println("\n"
 				+ " _____ ____ ____ _ _       ____ _____   _____ _    _____   ______     _ ____ ____ _____ _________ \n"
@@ -38,32 +39,29 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 				+ "Have your phone ready for certain interactions!\n\n");
 		
 		
-		while(true) {
-			
-			System.out.println("Are you ready to play? Type 1 to start and 2 to exit\n");
-			int option = playerInput.nextInt();
-			String input;
-			while(option == 1 || option == 2) {
-			switch (option) {
-			
-			//Game Start
-			case 1:
-				//TIMER STARTS
-				Clock clk = Clock.getInstance();
-				System.out.println("You're now in ajman! Pick a transportation method:");
-				
-				input = playerInput.next();
+		//TIMER STARTS
+		Clock clk = Clock.getInstance();
+		
+		//---- Hotel Lobby --//
+		HotelLobbyist lobbyist = new HotelLobbyist();
+		lobbyist.talk();
+		lobbyist.checkout();
+		
+		//---- Taxi Call --- //
+		
+		
 
-				
-				break;
-			case 2: 
-				System.out.println("\nGoodbye!");
-				System.exit(1); break;
-			}
-			
-			}
-			System.out.println("\nWrong input! Try again..");
-		}
-	}
+		//-- Locations --//
+		AbuDhabiAirport airport = new AbuDhabiAirport(new Dates());
+		SouqAlQadeem souq = new SouqAlQadeem(new Oud());
+		DubaiMall mall = new DubaiMall(new Picture());
+		ZorahBeach beach = new ZorahBeach(new Dallah());
+		// -- TCP -- //
+		//Landmark [] array= {airport,souq,mall,beach};
+		Subject [] arr= {airport,souq,mall,beach,client};
+		Taxi cab = new Taxi(arr);
+		Transport transport = new Transport(cab);
+		
 
-}
+} }
+

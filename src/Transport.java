@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
-public class Transport  implements Observer
+public class Transport implements Observer
 {
+	Subject sub;
+	Transport (Subject s){
+	this.sub=s;
+	this.sub.registerObserver(this);
+	
+		
+	}
+	
 	ZorahBeach ajman = new ZorahBeach(new Dallah());
 	SouqAlQadeem sharjah = new SouqAlQadeem(new Oud());
 	DubaiMall dubai = new DubaiMall(new Picture());
@@ -31,6 +39,7 @@ public class Transport  implements Observer
 	}
 	@Override
 	public void update(Message m) {
+		if (m.payload=="wave") { this.StartTrip(); }
 		if (m.topic == "goto")
 		{
 			 if(m.payload == "Sharjah")

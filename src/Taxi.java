@@ -12,9 +12,20 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 		start.start();	
 	}
 	
+	Taxi(Subject s[])
+	{
+		for (int i = 0; i <s.length; i++) {
+			this.s=s[i];
+			this.registerObserver(this);
+		}
+		Thread start=new Thread(this);
+		start.start();	
+	}
+	
 	@Override
 	public void run() 
 	{
+		
 		while(true);
 	}
 

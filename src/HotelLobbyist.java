@@ -10,15 +10,16 @@ public class HotelLobbyist extends Characters  {
 	
 	
 	public void checkout() {
-	
-	try (Scanner inp = new Scanner(System.in)) {
+
+	Scanner inp = new Scanner(System.in);
 		String phrase = inp.nextLine();
 		
-		if(!phrase.contentEquals("I want to checkout"))
+		if(!phrase.contains("I want to checkout"))
 		{
 			System.out.println("I Can Not Proceed With The Checkout "
 			+ "Unless You Type The Phrase I want to checkout ");
 			phrase = inp.nextLine();
+			this.checkout();
 		}
 		else 
 		{
@@ -26,10 +27,11 @@ public class HotelLobbyist extends Characters  {
 					+ " The Gate To Take You To Your Next "
 					+ "Destination, Stay Safe !");
 		}
+	
 	}
 	
 		
-	}
+	
 
 @Override
 public void talk ()

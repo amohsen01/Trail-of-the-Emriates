@@ -37,23 +37,13 @@ public class TCP extends ConcreteSubject implements Runnable
 		
 			Socket socket = new Socket(host, port);
 			
-            InputStream input = socket.getInputStream();
-            InputStreamReader reader = new InputStreamReader(input);
- 
-            BufferedReader br = new BufferedReader(reader);
-            String line = "";
-            JSONParser parser = new JSONParser();
-        	JSONObject jsonObject = new JSONObject();
-            while ((line = br.readLine()) != null)
-            {
-            try 
-            {
-				jsonObject = (JSONObject) parser.parse(line);
-			}
-            catch (ParseException e) 
-            {
-				e.printStackTrace();
-			}
+            InputStream input=socket.getInputStream();
+            InputStreamReader reader=new InputStreamReader(input);
+            BufferedReader BR= new BufferedReader(reader);
+            String line="";
+            while((line=BR.readLine())!=null) {
+            	JSONParser parser=new JSONParser();
+            	JSONObject jsonObject=(JSONObject) parser.parse(line);
             
             String orientation = (String) jsonObject.get("deviceOrientation");
             int OR = Integer.parseInt(orientation);
@@ -88,11 +78,21 @@ public class TCP extends ConcreteSubject implements Runnable
             	String accZ = (String) jsonObject.get("accelerometerAccelerationZ");
             	double acc = Double.parseDouble(accZ);
             	//System.out.println("Z acceleration is: " + acc);
-            	
+            	//double acc=1;
             	if (acc!=0)
             	{
             		Message n = new Message(this, "phone", "wave");
-        			publishMessage(n); 
+            	
+            	System.out.println(acc);
+            	try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            		publishMessage(n); 
+        			
+            		
             	}
             	
             	String audio = (String) jsonObject.get("avAudioRecorderPeakPower");
@@ -114,7 +114,10 @@ public class TCP extends ConcreteSubject implements Runnable
 		catch (IOException ex) 
 		{
             System.out.println("I/O error: " + ex.getMessage());
-        }
+        } catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 	
