@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class AbuDhabiAirport extends Landmark {
 FlightAttendant Emma=new FlightAttendant();
-	String Description="            ______\r\n"
+	static String Description="            ______\r\n"
 			+ "            _\\ _~-\\___\r\n"
 			+ "    =  = ==(____AA____D\r\n"
 			+ "                \\_____\\___________________,-~~~~~~~`-.._\r\n"
@@ -9,8 +9,8 @@ FlightAttendant Emma=new FlightAttendant();
 			+ "                `~-.__        ___..----..                  )\r\n"
 			+ "                      `---~~\\___________/------------`````\r\n"
 			+ "                      =  ===(_________D\n\nWelcome to Abu Dhabi International Airport ";
-	AbuDhabiAirport(String name, String location, Collectible collectible, String Description) {
-		super(name, location, collectible, Description);
+	AbuDhabiAirport(Collectible collectible) {
+		super("Abu Dhabi International Airport", "Abu Dhabi", collectible,Description);
 		// TODO Auto-generated constructor stub
 	}
 

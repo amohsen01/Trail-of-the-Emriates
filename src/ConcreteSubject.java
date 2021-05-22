@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class ConcreteSubject implements Subject {
 ArrayList observers=new ArrayList();
 
+
+
+
+
 	public void registerObserver(Observer o) {
 		// TODO Auto-generated method stub
 		observers.add(o);

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HotelLobbyist extends Characters {
+public class HotelLobbyist extends Characters  {
 
 	public HotelLobbyist() {
 		

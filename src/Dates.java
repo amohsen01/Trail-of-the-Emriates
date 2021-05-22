@@ -1,7 +1,7 @@
 
 public class Dates extends Collectible implements Observer{
 
-	public Dates(String name, String descrp, String pick) {
+	public Dates() {
 super("Dates", "These Dates Are Freshly Picked And Would"
 + " Make A Great Snack, They're On Sale And Could Only Be Found In The Airport !" , 
 "You Have Successfully Added Dates To Your Back Pack");

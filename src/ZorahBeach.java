@@ -1,7 +1,8 @@
  
 public class ZorahBeach extends Landmark{
 static String description="At a distance of 18 km from Ajman Bus Station, \nAl Zorah Beach is a public beach situated at Al Zorah locality of Ajman.\nIt is one of the popular beaches in Ajman. \nAl Zorah Beach is a pristine beach with clear waters and smooth white sand. It is a nice place to visit especially when you prefer a quiet place as it is less crowded.";
-	ZorahBeach(String name, String location, Collectible collectible) {
+
+ZorahBeach( Collectible collectible) {
 		super("Zorah Beach", "Ajman", collectible, description);
 		// TODO Auto-generated constructor stub
 	}
