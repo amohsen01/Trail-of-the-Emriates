@@ -1,5 +1,5 @@
 
-public class Dallah extends Collectible {
+public class Dallah extends Collectible implements Observer {
 
 public Dallah() {
 	
@@ -16,8 +16,18 @@ System.out.println(descrp);
 }
 
 @Override
-public void pickUp() {
-System.out.println(pick);
+public void update(Message m) {
+	if (m.topic == "movement")
+	{
+		System.out.println(pick);
+	}
+}
+
+
+@Override
+public void update(String m) {
+	// TODO Auto-generated method stub
+	
 }
 
 }

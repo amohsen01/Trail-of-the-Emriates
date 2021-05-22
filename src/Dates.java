@@ -1,5 +1,5 @@
 
-public class Dates extends Collectible {
+public class Dates extends Collectible implements Observer{
 
 	public Dates(String name, String descrp, String pick) {
 super("Dates", "These Dates Are Freshly Picked And Would"
@@ -17,6 +17,20 @@ System.out.println(descrp);
 public void pickUp() {
 	
 System.out.println(pick);
+}
+
+@Override
+public void update(Message m) {
+	if (m.topic == "movement")
+	{
+		System.out.println(pick);
+	}
+}
+
+@Override
+public void update(String m) {
+	// TODO Auto-generated method stub
+	
 }
 
 }

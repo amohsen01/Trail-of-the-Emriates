@@ -1,20 +1,28 @@
-
-public class Oud extends Collectible {
-
-public Oud() {
-super("Oud", "The Oud Is An Arabic Instrument That Is Similar To The Guitar,"
-		
-+ " You Can play Any Melody With It! ", "You Have Successfully Added Oud To Your Back Pack" );
-		
-}
-@Override
-public void descrp()
+public class Oud extends Collectible implements Observer
 {
-System.out.println(descrp);	
-}
-@Override
-public void pickUp() {
+	public Oud() 
+	{
+			super("Oud", "The Oud Is An Arabic Instrument That Is Similar To The Guitar,"
+					+ " You Can play Any Melody With It! ", "You Have Successfully Added Oud To Your Back Pack" );	
+	}
 	
-System.out.println(pick);
-}
+	@Override
+	public void descrp()
+	{
+		System.out.println(descrp);	
+	}
+
+	@Override
+	public void update(Message m) {
+		if (m.topic == "movement")
+		{
+			System.out.println(pick);
+		}
+	}
+
+	@Override
+	public void update(String m) {
+		// TODO Auto-generated method stub
+		
+	}
 }

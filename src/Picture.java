@@ -1,5 +1,5 @@
 
-public class Picture extends Collectible {
+public class Picture extends Collectible implements Observer{
 
 	public Picture() {
 		super("Picture at Burj Khalifa ", "The Photographer Took A Picture Of "
@@ -18,5 +18,19 @@ public class Picture extends Collectible {
 		
 	System.out.println(pick);
 	
+	}
+
+	@Override
+	public void update(Message m) {
+		if (m.topic == "movement")
+		{
+			System.out.println(pick);
+		}
+	}
+
+	@Override
+	public void update(String m) {
+		// TODO Auto-generated method stub
+		
 	}
 }
