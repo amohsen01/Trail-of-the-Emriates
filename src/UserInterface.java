@@ -58,6 +58,7 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 		ZorahBeach beach = new ZorahBeach(new Dallah());
 		// -- TCP -- //
 		//Landmark [] array= {airport,souq,mall,beach};
+		new TCP ("192.168.0.172",64911);
 		Subject [] arr= {airport,souq,mall,beach,client};
 		Taxi cab = new Taxi(arr);
 		Transport transport = new Transport(cab);

@@ -12,7 +12,7 @@ import org.json.simple.parser.ParseException;
 public class TCP extends ConcreteSubject implements Runnable
 {
 	// ip address of the machine 
-    String host = "192.168.0.199";
+    String host = "192.168.0.172";
     
     // need the port 
     int port = 8080;
