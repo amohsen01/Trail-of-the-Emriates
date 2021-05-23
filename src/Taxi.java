@@ -15,8 +15,8 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 	Taxi(Subject s[])
 	{
 		for (int i = 0; i<s.length; i++) {
-			this.s=s[i];
-			this.registerObserver(this);
+			this.s = s[i];
+			this.s.registerObserver(this);
 		}
 		Thread start=new Thread(this);
 		start.start();	
@@ -28,33 +28,38 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 		while(true);
 	}
 
+	
+	boolean check = false;
 	public void update(Message m) 
 	{
 	//here we can implement the message system;
-		if(m.topic=="phone")
+		if(m.topic=="phone" && check == false)
 		{
-			if(m.payload == "wave")
-			{
-				System.out.println("You are now in the Taxi ");
-			}
+				System.out.println("You are now in the Taxi.");
+				check = true;
 		}
+			
 		
-		if (m.topic=="done")
-		{ 	Message message;
+		else if (m.topic=="done")
+		{ 	
+			Message message;
 			switch(m.payload) 
 			{
 				case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem ");
 					message=new Message(this, "goto", "Sharjah");
 					publishMessage(message);
 					break;
+					
 				case "Sharjah": System.out.println("Hope you enjoyed the Souq Al Qadeem our next destination is the Dubai Mall");
 				message=new Message(this, "goto", "Dubai");
 				publishMessage(message);
 					break;		
+					
 				case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport  ");
 				message=new Message(this, "goto", "AbuDhabi");
 				publishMessage(message);
 					break;
+					
 				case "Abu Dhabi":System.out.println("You have reached your destination, Hope you had a fun time in the Emirates!");
 					break;
 			}

@@ -21,8 +21,7 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 	
 	@Override
 	public void run() {
-		Scanner playerInput = new Scanner(System.in);  
-		TCP client = new TCP("192.168.0.125", 55953);
+		Scanner playerInput = new Scanner(System.in); 
 
 		System.out.println("\n"
 				+ " _____ ____ ____ _ _       ____ _____   _____ _    _____   ______     _ ____ ____ _____ _________ \n"
@@ -58,7 +57,7 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 		ZorahBeach beach = new ZorahBeach(new Dallah());
 		// -- TCP -- //
 		//Landmark [] array= {airport,souq,mall,beach};
-		new TCP ("192.168.0.172",64911);
+		TCP client = new TCP ("192.168.0.172",64911);
 		Subject [] arr= {airport,souq,mall,beach,client};
 		Taxi cab = new Taxi(arr);
 		Transport transport = new Transport(cab);

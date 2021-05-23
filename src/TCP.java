@@ -75,28 +75,19 @@ public class TCP extends ConcreteSubject implements Runnable
             		break;
             	}
             
-            	String accZ = (String) jsonObject.get("accelerometerAccelerationZ");
-            	double acc = Double.parseDouble(accZ);
-            	//System.out.println("Z acceleration is: " + acc);
-            	//double acc=1;
-            	if (acc!=0)
-            	{
-            		Message n = new Message(this, "phone", "wave");
-            	try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            		publishMessage(n); 
-        			
-            		
-            	}
+            String accZ = (String) jsonObject.get("accelerometerAccelerationX");
+           	double acc = Double.parseDouble(accZ);
+           	
+           	if (acc>2)
+           	{
+           		Message n = new Message(this, "phone", "wave");
+            	publishMessage(n);
+            }
             	
-            	String audio = (String) jsonObject.get("avAudioRecorderPeakPower");
-            	double sound = Double.parseDouble(audio);
+            String audio = (String) jsonObject.get("avAudioRecorderPeakPower");
+            double sound = Double.parseDouble(audio);
             	
-            	if(sound > -5)
+            if(sound > -5)
             	{
             		Message n = new Message(this, "sound", "detected");
         			publishMessage(n); 
