@@ -28,3 +28,8 @@
 /CheckOut.class
 /Passport.class
 /PlaneTicket.class
+/Context.class
+/HappyTourist.class
+/NormalTourist.class
+/SadTourist.class
+/State.class

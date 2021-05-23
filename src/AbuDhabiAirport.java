@@ -50,7 +50,7 @@ FlightAttendant Emma=new FlightAttendant(this);
 		System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
 		try 
 		{
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 		}
 		catch (InterruptedException e) 
 		{

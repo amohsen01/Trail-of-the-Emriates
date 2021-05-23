@@ -32,7 +32,7 @@ public class Transport implements Observer
 			System.out.print(ajman.descrp);
 			System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
 			try {
-				Thread.sleep(6000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -47,13 +47,6 @@ public class Transport implements Observer
 				e.printStackTrace();
 			}
 			ajman.check=false;
-		}
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		
 		ajman.leaveLandmark();
@@ -88,7 +81,7 @@ public class Transport implements Observer
 					 sharjah.check = false;
 					 try 
 					 {
-						 Thread.sleep(4000);
+						 Thread.sleep(2000);
 					 }
 					 catch (InterruptedException e) 
 					 {
@@ -98,9 +91,10 @@ public class Transport implements Observer
 				 System.out.println("You Have Successfully Added Oud To Your Back Pack");
 				 sharjah.check = false;
 				 state.setHappy();
-					swipe.talk();
+				 Swiper swipe1=new Swiper(state);
+					swipe1.talk();
 					try {
-						swipe.getInput();
+						swipe1.getInput();
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -133,7 +127,7 @@ public class Transport implements Observer
 					System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
 					try 
 					{
-						Thread.sleep(4000);
+						Thread.sleep(2000);
 					}
 					catch (InterruptedException e) 
 					{
@@ -148,9 +142,10 @@ public class Transport implements Observer
 						e.printStackTrace();
 					}
 					state.setHappy();
-					swipe.talk();
+					Swiper swipe2=new Swiper(state);
+					swipe2.talk();
 					try {
-						swipe.getInput();
+						swipe2.getInput();
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

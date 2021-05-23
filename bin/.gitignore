@@ -28,11 +28,8 @@
 /CheckOut.class
 /Passport.class
 /PlaneTicket.class
-/.classpath
-/.gitignore
-/.project
 /Context.class
-/State.class
 /HappyTourist.class
-/SadTourist.class
 /NormalTourist.class
+/SadTourist.class
+/State.class

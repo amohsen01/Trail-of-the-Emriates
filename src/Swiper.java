@@ -24,6 +24,7 @@ TimerTask task = new TimerTask()
         {
             System.out.println("Oh Ooo Swiper Got You And Stole Your Item Away !!!" );
             c.setSad();
+            task.cancel();
         }
     }    
 };
@@ -42,9 +43,13 @@ TimerTask task = new TimerTask()
 	        if (str.contains("Hide"))
 	        {
 	        	
-	        System.out.println("You Are Safe From Swiper !");	
+	        System.out.println("You Are Safe From Swiper!");	
 	        c.setHappy();
 	        timer.cancel();
+	        }
+	        else
+	        {
+	            task.cancel();
 	        }
 	        
 	    
