@@ -8,6 +8,7 @@ public class Transport implements Observer
 	AbuDhabiAirport intl;
 	Subject sub;
 
+
 	Transport (Subject s,ZorahBeach ajman,SouqAlQadeem sharjah,DubaiMall dubai,AbuDhabiAirport intl)
 	{
 		this.sub=s;
@@ -17,9 +18,9 @@ public class Transport implements Observer
 		this.dubai = dubai;
 		this.intl = intl;
 	}
-
+	Context state=new Context();
 	Scanner s = new Scanner(System.in);
-	
+	Swiper swipe=new Swiper(state);
 	public void StartTrip() 
 	{		
 		System.out.println(ajman.Description);
@@ -36,7 +37,15 @@ public class Transport implements Observer
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("You Have Successfully Added Dallah To Your Backpack.");
+			System.out.println("You Have Successfully Added Dallah To Your Backpack."); 
+			state.setHappy();
+			swipe.talk();
+			try {
+				swipe.getInput();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			ajman.check=false;
 		}
 		
@@ -88,6 +97,14 @@ public class Transport implements Observer
 				 }
 				 System.out.println("You Have Successfully Added Oud To Your Back Pack");
 				 sharjah.check = false;
+				 state.setHappy();
+					swipe.talk();
+					try {
+						swipe.getInput();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				 try {
 						Thread.sleep(2000);
 					} catch (InterruptedException e) {
@@ -127,6 +144,14 @@ public class Transport implements Observer
 					try {
 						Thread.sleep(2000);
 					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					state.setHappy();
+					swipe.talk();
+					try {
+						swipe.getInput();
+					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}

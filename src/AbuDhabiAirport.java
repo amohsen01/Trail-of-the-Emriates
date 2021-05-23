@@ -63,6 +63,17 @@ FlightAttendant Emma=new FlightAttendant(this);
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Context state=new Context();
+		state.setHappy();
+		Swiper swipe=new Swiper(state);
+		swipe.talk();
+		try {
+			swipe.getInput();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		System.out.println("Finding the gate...");
 		try {
 			Thread.sleep(4000);
