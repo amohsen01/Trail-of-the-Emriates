@@ -82,8 +82,6 @@ public class TCP extends ConcreteSubject implements Runnable
             	if (acc!=0)
             	{
             		Message n = new Message(this, "phone", "wave");
-            	
-            	System.out.println(acc);
             	try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {

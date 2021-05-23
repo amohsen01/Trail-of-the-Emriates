@@ -14,7 +14,7 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 	
 	Taxi(Subject s[])
 	{
-		for (int i = 0; i <s.length; i++) {
+		for (int i = 0; i<s.length; i++) {
 			this.s=s[i];
 			this.registerObserver(this);
 		}
@@ -25,18 +25,24 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 	@Override
 	public void run() 
 	{
-		
 		while(true);
 	}
 
 	public void update(Message m) 
 	{
 	//here we can implement the message system;
+		if(m.topic=="phone")
+		{
+			if(m.payload == "wave")
+			{
+				System.out.println("You are now in the Taxi ");
+			}
+		}
+		
 		if (m.topic=="done")
 		{ 	Message message;
 			switch(m.payload) 
 			{
-		
 				case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem ");
 					message=new Message(this, "goto", "Sharjah");
 					publishMessage(message);
@@ -50,18 +56,11 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 				publishMessage(message);
 					break;
 				case "Abu Dhabi":System.out.println("You have reached your destination, Hope you had a fun time in the Emirates!");
-
 					break;
 			}
 		}
 	
-		if(m.topic=="phone")
-		{
-			if(m.payload == "wave")
-			{
-				System.out.println("You are now in the Taxi ");
-			}
-		}
+		
 	}
 
 	@Override
