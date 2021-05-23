@@ -30,6 +30,13 @@ public class Transport implements Observer
 			
 			System.out.print(ajman.descrp);
 			System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
+			try {
+				Thread.sleep(6000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("You Have Successfully Added Dallah To Your Backpack.");
 			ajman.check=false;
 		}
 		
@@ -41,6 +48,7 @@ public class Transport implements Observer
 		}
 		
 		ajman.leaveLandmark();
+		
 	}
 	
 	@Override
@@ -54,6 +62,12 @@ public class Transport implements Observer
 		{
 			 if(m.payload == "Sharjah")
 			 {
+				 try {
+						Thread.sleep(7000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				 System.out.println(sharjah.Description);
 				 System.out.println("Would you like to explore and maybe collect a souvenir to remember this place?");
 				 String string=s.nextLine();
@@ -65,18 +79,32 @@ public class Transport implements Observer
 					 sharjah.check = false;
 					 try 
 					 {
-						 Thread.sleep(1000);
+						 Thread.sleep(4000);
 					 }
 					 catch (InterruptedException e) 
 					 {
 						 e.printStackTrace();
 					 }
 				 }
+				 System.out.println("You Have Successfully Added Oud To Your Back Pack");
+				 sharjah.check = false;
+				 try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				 sharjah.leaveLandmark();
 			}
 			
 			 else if(m.payload == "Dubai")
 			 {
+				 try {
+						Thread.sleep(7000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				 System.out.println(dubai.Description);
 				 System.out.println("Would you like to explore and maybe collect a souvenir to remember this place?");
 				 String string=s.nextLine();
@@ -86,44 +114,51 @@ public class Transport implements Observer
 					dubai.Explore();
 					System.out.println(dubai.descrp);
 					System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
-					dubai.check = false;
-					
 					try 
 					{
-						Thread.sleep(1000);
+						Thread.sleep(4000);
 					}
 					catch (InterruptedException e) 
 					{
 						e.printStackTrace();
 					}
-				
+					System.out.println("You Have Successfully Added The Photo At Burj Khalifa To Your Back Pack");
+					dubai.check = false;
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					dubai.leaveLandmark();
 				 }
 			 }
 			
 			 else if(m.payload == "Abu Dhabi")
 			 {
+				 try {
+						Thread.sleep(7000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				System.out.println(intl.Description);
 				System.out.println("Would you like to explore and maybe collect a souvenir to remember this place?");
 				String string=s.nextLine();
 				if (string.contains("Y")||string.contains("y")) {
 					intl.Explore();
-					System.out.println(intl.descrp);
-					System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
-					intl.check = false;
-					try 
-					{
-						Thread.sleep(1000);
-					}
-					catch (InterruptedException e) 
-					{
+					//System.out.println(intl.descrp);
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				intl.leaveLandmark();
+				intl.leaveLandmark();}
 				}
 			 }
 		}
-	}
+	
 	
 
 

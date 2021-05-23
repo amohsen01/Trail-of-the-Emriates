@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class AbuDhabiAirport extends Landmark {
 FlightAttendant Emma=new FlightAttendant();
-	static String Description="            ______\r\n"
+	static String description="\n          ______\r\n"
 			+ "            _\\ _~-\\___\r\n"
 			+ "    =  = ==(____AA____D\r\n"
 			+ "                \\_____\\___________________,-~~~~~~~`-.._\r\n"
@@ -10,7 +10,7 @@ FlightAttendant Emma=new FlightAttendant();
 			+ "                      `---~~\\___________/------------`````\r\n"
 			+ "                      =  ===(_________D\n\nWelcome to Abu Dhabi International Airport ";
 	AbuDhabiAirport(Collectible collectible) {
-		super("Abu Dhabi International Airport", "Abu Dhabi", collectible,Description);
+		super("Abu Dhabi International Airport", "Abu Dhabi", collectible,description);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -46,6 +46,23 @@ FlightAttendant Emma=new FlightAttendant();
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(this.descrp);
+		System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
+		try 
+		{
+			Thread.sleep(4000);
+		}
+		catch (InterruptedException e) 
+		{
+			e.printStackTrace();
+		}
+		System.out.println("You Have Successfully Added Dates To Your Back Pack");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("Finding the gate...");
 		try {
 			Thread.sleep(4000);
@@ -62,13 +79,13 @@ FlightAttendant Emma=new FlightAttendant();
 		}
 		System.out.println("Walking towards the Attendant");
 		try {
-			Thread.sleep(1560);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Emma.talk();
-		Emma.checkin();
+		//Emma.update();
 	}
 
 	@Override

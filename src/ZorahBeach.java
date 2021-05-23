@@ -1,7 +1,7 @@
  
 public class ZorahBeach extends Landmark
 {
-	static String description="At a distance of 18 km from Ajman Bus Station, \nAl Zorah Beach is a public beach situated at Al Zorah locality of Ajman.\nIt is one of the popular beaches in Ajman. \nAl Zorah Beach is a pristine beach with clear waters and smooth white sand. It is a nice place to visit especially when you prefer a quiet place as it is less crowded.";
+	static String description="At a distance of 18 km from Ajman Bus Station, Al Zorah Beach is a public beach situated at Al Zorah locality of Ajman.\nIt is one of the popular beaches in Ajman. \nAl Zorah Beach is a pristine beach with clear waters and smooth white sand. It is a nice place to visit especially when you prefer a quiet place as it is less crowded.";
 
 	ZorahBeach( Collectible collectible) 
 	{
@@ -12,10 +12,10 @@ public class ZorahBeach extends Landmark
 	@Override
 	public void Explore() 
 	{
-		System.out.println("You have entered the Beach");
+		System.out.println("\nYou have entered the Beach");
 		try 
 		{
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		}
 		catch (InterruptedException e) 
 		{
@@ -41,14 +41,14 @@ public class ZorahBeach extends Landmark
 		}
 		System.out.println("You see some people swimming on one side, and on the other side people are fishing...");
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("A kind stranger offered you a cup of tea and you had a nice conversation!");
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

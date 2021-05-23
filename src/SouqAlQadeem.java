@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class SouqAlQadeem extends Landmark{
 static String Description= "Built on the foundations of one of the oldest and most vibrant souks in the region, this beautifully renovated souk specialises in regional designers and unique wares.\r"
-		+ "\r"
-		+ "Shop for stylish furniture and homewares, prayer beads, Arabic perfumes and oils, and high-quality clothing including bespoke kandoras and handcrafted abayas. Refuel at a speciality coffee house and enjoy delicious Emirati cuisine at Al Saroud Traditional Restaurant.";
+		+ "Shop for stylish furniture and homewares, prayer beads, Arabic perfumes and oils, and high-quality clothing including bespoke kandoras and handcrafted abayas.\nRefuel at a speciality coffee house and enjoy delicious Emirati cuisine at Al Saroud Traditional Restaurant.";
 	
 SouqAlQadeem(Collectible collectible) {
 		super("Souq Al Qadeem", "Sharjah", collectible, Description);
@@ -13,24 +12,18 @@ SouqAlQadeem(Collectible collectible) {
 	@Override
 	public void Explore() {
 		// TODO Auto-generated method stub
-		System.out.println("It is a great weather outdoors to be able to go around shopping outdoors!");
+		System.out.println("\nIt is a great weather outdoors to be able to go around shopping outdoors!");
 		System.out.println("You are walking around the local clothing store...");
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("You are walking around the local clothing store...");
-		try {
-			Thread.sleep(1000);
+		try
+		{
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Going to the left you find the perfume stores, these walk ways smell so fragrant and nice!");
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,23 +32,23 @@ SouqAlQadeem(Collectible collectible) {
 		Scanner s=new Scanner(System.in);
 		String string=s.nextLine();
 		if(string.contains("Y")||string.contains("y")) {
-			System.out.println("You are now being served Harees, and it looks delicious!");
+			System.out.println("\nYou are now being served Harees, and it looks delicious!");
 			try {
-				Thread.sleep(500);
+				Thread.sleep(2500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println("You are now being served the main meal, Machboos, and it smells really nice");
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println("You are now being served dessert, Luqaimat, and it looks so sweet");
 			try {
-				Thread.sleep(300);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -64,19 +57,44 @@ SouqAlQadeem(Collectible collectible) {
 		}
 		else {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
+		System.out.println("The Oud Is An Arabic Instrument That Is Similar To The Guitar,You Can play Any Melody With It! ");
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Would you like to get an Oud?");
+		if(string.contains("Y")||string.contains("y"))
+		{
+			System.out.println("You Have Successfully Added Oud To Your Back Pack");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else {
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 		System.out.println("You now see the exit do you want to go through the souk again?");
 		string=s.nextLine();
 		if(string.contains("Y")||string.contains("y")) {
 			this.Explore();
 		}
-		else this.leaveLandmark();
+		else this.leaveLandmark();}
 	}
 	@Override
 	public String LookAround() {

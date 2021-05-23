@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
-public class FlightAttendant extends Characters {
+public class FlightAttendant extends Characters implements Observer{
 
 	public FlightAttendant() {
 		
 		super("Emma" , "Hello, I'm Emma Your Flight Attendant. Welcome To"
 				+ " The Check In Area, Please Hand Me Your Passport So I"
-				+ " Can Check You In by Typing hand passport ");
+				+ " Can Check You In!");
 		
 	}
 	public void checkin() {
-	
 	try (Scanner inp = new Scanner(System.in)) {
 		String phrase = inp.nextLine();
 		
@@ -39,10 +38,27 @@ public class FlightAttendant extends Characters {
 //	t1.prepareRecipe();
 		
 	}
+	
 	@Override
 	public void talk ()
 	{
 		System.out.println(conversation);
+	}
+	
+	boolean check = false;
+	@Override
+	public void update(Message m) {
+		if(m.payload == "detected" && check == false)
+		{
+			System.out.println("You Have Been Checked In Successfully, Have A Safe Flight! ");
+			check = true;
+		}
+		
+	}
+	@Override
+	public void update(String m) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

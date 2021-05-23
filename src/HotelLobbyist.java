@@ -25,7 +25,7 @@ public class HotelLobbyist extends Characters  {
 		{
 			System.out.println("You Have Been Checked Out Successfully, You Can Catch A Taxi By"
 					+ " The Gate To Take You To Your Next "
-					+ "Destination, Stay Safe !");
+					+ "Destination, Stay Safe!");
 		}
 	
 	}

@@ -59,7 +59,7 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 					break;		
 					
 				case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport!\n");
-				message=new Message(this, "goto", "AbuDhabi");
+				message=new Message(this, "goto", "Abu Dhabi");
 				publishMessage(message);
 					break;
 					
