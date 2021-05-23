@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class AbuDhabiAirport extends Landmark {
-FlightAttendant Emma=new FlightAttendant();
+FlightAttendant Emma=new FlightAttendant(this);
 	static String description="\n          ______\r\n"
 			+ "            _\\ _~-\\___\r\n"
 			+ "    =  = ==(____AA____D\r\n"
@@ -84,8 +84,10 @@ FlightAttendant Emma=new FlightAttendant();
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		Message n = new Message(this, "Attendant", "Walking");
+		publishMessage(n);
 		Emma.talk();
-		//Emma.update();
 	}
 
 	@Override

@@ -9,7 +9,18 @@ public class FlightAttendant extends Characters implements Observer{
 				+ " Can Check You In!");
 		
 	}
-	public void checkin() {
+	
+	Subject s;
+	public FlightAttendant(Subject s) {
+		
+		super("Emma" , "Hello, I'm Emma Your Flight Attendant. Welcome To"
+				+ " The Check In Area, Please Hand Me Your Passport So I"
+				+ " Can Check You In!");
+		this.s = s;
+		this.s.registerObserver(this);
+		
+	}
+	/*public void checkin() {
 	try (Scanner inp = new Scanner(System.in)) {
 		String phrase = inp.nextLine();
 		
@@ -37,7 +48,7 @@ public class FlightAttendant extends Characters implements Observer{
 //	Passport t1 = new Passport();
 //	t1.prepareRecipe();
 		
-	}
+	}*/
 	
 	@Override
 	public void talk ()
@@ -48,13 +59,13 @@ public class FlightAttendant extends Characters implements Observer{
 	boolean check = false;
 	@Override
 	public void update(Message m) {
-		if(m.payload == "detected" && check == false)
+		if(m.payload == "detected")
 		{
-			System.out.println("You Have Been Checked In Successfully, Have A Safe Flight! ");
+			System.out.println("You Have Been Checked In Successfully, Have A Safe Flight!");
 			check = true;
 		}
-		
 	}
+	
 	@Override
 	public void update(String m) {
 		// TODO Auto-generated method stub

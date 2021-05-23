@@ -89,6 +89,7 @@ public class TCP extends ConcreteSubject implements Runnable
             	
             if(sound > -5)
             	{
+            		//System.out.println("You Have Been Checked In Successfully, Have A Safe Flight!");
             		Message n = new Message(this, "sound", "detected");
         			publishMessage(n); 
             	}

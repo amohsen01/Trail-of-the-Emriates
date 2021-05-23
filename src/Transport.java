@@ -154,9 +154,16 @@ public class Transport implements Observer
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				intl.leaveLandmark();}
+				
+			if(m.payload == "Walking")
+			{
+				System.out.println("You Have Been Checked In Successfully, Have A Safe Flight!");
+			}
+				intl.leaveLandmark();
+				}
 				}
 			 }
+		System.exit(1);
 		}
 	
 	

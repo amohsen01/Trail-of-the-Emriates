@@ -60,7 +60,7 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 		System.out.println("You're now on the road.. Wave your phone to call a taxi!");
 		Taxi cab = new Taxi(arr);
 		Transport transport = new Transport(cab,beach,souq,mall,airport);
-		
+		FlightAttendant Emma = new FlightAttendant();
 
 } }
 
