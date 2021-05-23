@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class UserInterface extends ConcreteSubject implements Runnable{
 
 	private static UserInterface inst = null;
@@ -21,7 +19,6 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 	
 	@Override
 	public void run() {
-		Scanner playerInput = new Scanner(System.in); 
 
 		System.out.println("\n"
 				+ " _____ ____ ____ _ _       ____ _____   _____ _    _____   ______     _ ____ ____ _____ _________ \n"
@@ -34,20 +31,18 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 				+ "                   ---- Created by Motasem, Ali, Shragah, and Yousef ----");
 		
 		System.out.println("\n\nFinishing a business trip in Ajman, you need to visit the landmarks in each Emirate within a specified amount of time to catch your flight.\n"
-				+ "You may choose to travel by taxi or walking.The game has collectibles that are be available at each Emirate that will add to your score.\n"
+				+ "Your journey begins with a taxi ride! The game has collectibles that are available at each Emirate.\n"
 				+ "Have your phone ready for certain interactions!\n\n");
 		
 		
 		//TIMER STARTS
 		Clock clk = Clock.getInstance();
 		
+		System.out.println("You're now at the hotel.. ");
 		//---- Hotel Lobby --//
 		HotelLobbyist lobbyist = new HotelLobbyist();
 		lobbyist.talk();
-		lobbyist.checkout();
-		
-		//---- Taxi Call --- //
-		
+		lobbyist.checkout();		
 		
 
 		//-- Locations --//
@@ -56,9 +51,13 @@ public class UserInterface extends ConcreteSubject implements Runnable{
 		DubaiMall mall = new DubaiMall(new Picture());
 		// -- TCP -- //
 		//Landmark [] array= {airport,souq,mall,beach};
-		TCP client = new TCP ("192.168.0.172",64911);
+		TCP client = new TCP ("192.168.0.125",57251);
 		ZorahBeach beach = new ZorahBeach(new Dallah(client));
 		Subject [] arr= {airport,souq,mall,beach,client};
+		
+		//---- Taxi Call --- //
+
+		System.out.println("You're now on the road.. Wave your phone to call a taxi!");
 		Taxi cab = new Taxi(arr);
 		Transport transport = new Transport(cab,beach,souq,mall,airport);
 		

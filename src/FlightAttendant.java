@@ -20,6 +20,13 @@ public class FlightAttendant extends Characters {
 			+ "Unless You Type The Phrase hand passport ");
 			
 			phrase = inp.nextLine();
+			
+			// --- plane check in procedure --//
+			Passport p = new Passport();
+			p.prepareToCheckout();
+			
+			PlaneTicket t = new PlaneTicket();
+			t.prepareToCheckout();
 		}
 		else 
 		{
@@ -27,6 +34,9 @@ public class FlightAttendant extends Characters {
 		}
 	}
 	
+	
+//	Passport t1 = new Passport();
+//	t1.prepareRecipe();
 		
 	}
 	@Override
