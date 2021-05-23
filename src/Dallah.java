@@ -5,8 +5,7 @@ public class Dallah extends Collectible implements Observer
 	public Dallah(Subject s) 
 	{
 		super("Dallah","The Dallah Is A Traditional Coffee Pot That Would Make "
-			+ "An Amazing Souvenir To Add To Your Collection !\n", "You Have Successfully Added"
-			+ " Dallah To Your Back Pack ");
+			+ "An Amazing Souvenir To Add To Your Collection !\n", "You Have Successfully Added Dallah To Your Back Pack ");
 		this.s=s;
 		s.registerObserver(this);
 	}
@@ -27,12 +26,14 @@ public class Dallah extends Collectible implements Observer
 	@Override
 	public void update(Message m) 
 	{
-		
-		if (m.payload == "movement"&&check==false )
+		if(m.topic == "movement" && check == false)
 		{
-			System.out.println(pick);
-			check=true;
+			if (m.payload == "portrait")
+			{
+				System.out.println(pick);
+			}
 		}
+		check = true;
 	}
 
 	@Override

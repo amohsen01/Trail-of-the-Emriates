@@ -29,6 +29,7 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 	}
 
 	
+	
 	boolean check = false;
 	public void update(Message m) 
 	{

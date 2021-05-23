@@ -34,7 +34,7 @@ public class ZorahBeach extends Landmark
 				+ "   `~~~~~~~~~'                                                  -\"-\r\n"
 				+ "\r\n");
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class ZorahBeach extends Landmark
 		}
 		System.out.println("A kind stranger offered you a cup of tea and you had a nice conversation!");
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
