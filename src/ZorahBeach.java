@@ -6,6 +6,7 @@ public class ZorahBeach extends Landmark
 	ZorahBeach( Collectible collectible) 
 	{
 		super("Zorah Beach", "Ajman", collectible, description);
+		
 	}
 
 	@Override
@@ -61,8 +62,8 @@ public class ZorahBeach extends Landmark
 	}
 
 	@Override
-	public void leaveLandmark() {
-		// TODO Auto-generated method stub
+	public void leaveLandmark() 
+	{
 		Message m=new Message(this, "done","Ajman");
 		publishMessage(m);
 	}

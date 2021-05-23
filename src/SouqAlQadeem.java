@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 public class SouqAlQadeem extends Landmark{
-static String Description= "Built on the foundations of one of the oldest and most vibrant souks in the region, this beautifully renovated souk specialises in regional designers and unique wares.\r\n"
-		+ "\r\n"
+static String Description= "Built on the foundations of one of the oldest and most vibrant souks in the region, this beautifully renovated souk specialises in regional designers and unique wares.\r"
+		+ "\r"
 		+ "Shop for stylish furniture and homewares, prayer beads, Arabic perfumes and oils, and high-quality clothing including bespoke kandoras and handcrafted abayas. Refuel at a speciality coffee house and enjoy delicious Emirati cuisine at Al Saroud Traditional Restaurant.";
-	SouqAlQadeem(Collectible collectible) {
+	
+SouqAlQadeem(Collectible collectible) {
 		super("Souq Al Qadeem", "Sharjah", collectible, Description);
 		// TODO Auto-generated constructor stub
 	}

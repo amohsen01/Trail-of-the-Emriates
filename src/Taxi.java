@@ -36,26 +36,28 @@ public class Taxi extends ConcreteSubject implements Runnable,Observer
 		if(m.topic=="phone" && check == false)
 		{
 				System.out.println("You are now in the Taxi.");
+				Message x = new Message(this, "waved", "phone");
+				publishMessage(x);
 				check = true;
 		}
 			
 		
-		else if (m.topic=="done")
+		if (m.topic=="done")
 		{ 	
 			Message message;
 			switch(m.payload) 
 			{
-				case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem ");
+				case "Ajman": System.out.println("Hope you enjoyed Al Zorah Beach our next destination is Souq Al Qadeem!\n");
 					message=new Message(this, "goto", "Sharjah");
 					publishMessage(message);
 					break;
 					
-				case "Sharjah": System.out.println("Hope you enjoyed the Souq Al Qadeem our next destination is the Dubai Mall");
+				case "Sharjah": System.out.println("Hope you enjoyed the Souq Al Qadeem our next destination is the Dubai Mall!\n");
 				message=new Message(this, "goto", "Dubai");
 				publishMessage(message);
 					break;		
 					
-				case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport  ");
+				case "Dubai": System.out.println("Hope you enjoyed the Dubai Mall our next destination is Abu Dhabi Airport!\n");
 				message=new Message(this, "goto", "AbuDhabi");
 				publishMessage(message);
 					break;

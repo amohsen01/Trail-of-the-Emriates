@@ -2,44 +2,48 @@ import java.util.Scanner;
 
 public class Transport implements Observer
 {
+	ZorahBeach ajman;
+	SouqAlQadeem sharjah;
+	DubaiMall dubai;
+	AbuDhabiAirport intl;
 	Subject sub;
-	Transport (Subject s){
-	this.sub=s;
-	this.sub.registerObserver(this);
-	
-		
+
+	Transport (Subject s,ZorahBeach ajman,SouqAlQadeem sharjah,DubaiMall dubai,AbuDhabiAirport intl)
+	{
+		this.sub=s;
+		this.sub.registerObserver(this);	
+		this.ajman = ajman;
+		this.sharjah = sharjah;
+		this.dubai = dubai;
+		this.intl = intl;
 	}
-	
-	ZorahBeach ajman = new ZorahBeach(new Dallah());
-	SouqAlQadeem sharjah = new SouqAlQadeem(new Oud());
-	DubaiMall dubai = new DubaiMall(new Picture());
-	AbuDhabiAirport intl = new AbuDhabiAirport(new Dates());
+
 	Scanner s = new Scanner(System.in);
 	
-	public void StartTrip() {
+	public void StartTrip() 
+	{		
 		System.out.println(ajman.Description);
 		System.out.println("Would you like to explore and maybe collect a souvenir to remember this place?");
 		String string=s.nextLine();
-		if (string=="Y"||string=="y") {
+		if (string.contains("Y")||string.contains("y")) {
 			ajman.Explore();
-			ajman.descrp();
+			
+			System.out.print(ajman.descrp);
 			System.out.println("Would you like to pick it up? (Rotate your phone to pick it up)");
-			try 
-			{
-				Thread.sleep(1000);
-			}
-			catch (InterruptedException e) 
-			{
-				e.printStackTrace();
-			}
-		ajman.leaveLandmark();
+			ajman.check=false;
 		}
-		
-		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ajman.leaveLandmark();
 	}
+	
 	@Override
 	public void update(Message m) {
-		if (m.payload=="wave") { this.StartTrip(); }
+		if (m.payload=="phone") { this.StartTrip(); }
 		if (m.topic == "goto")
 		{
 			 if(m.payload == "Sharjah")
