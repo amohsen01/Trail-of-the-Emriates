@@ -37,7 +37,7 @@ public class Clock implements Runnable {
 				} else if (count == 150) {
 					 System.out.println("\n-- 2 minutes and 30 seconds have passed! --\n");
 				} else if (count == 180) {
-					 System.out.println("\n3 minutes passed...\n");
+					 System.out.println("\n3 minutes passed...\nYou missed the flight...");
 					 System.exit(1);
 				} 
 				
